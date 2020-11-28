@@ -6,9 +6,14 @@
 
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
+            <link rel="icon" type="image/png" href="build/favicon-32x32.png" />
         {% endblock %}
+
     </head>
     <body>
+        <header>
+        {% include "layout/_navbar.html.twig" %}
+        </header>
         {% block body %}{% endblock %}
 
         {% block javascripts %}
