@@ -32,9 +32,9 @@ class CategoryController extends AbstractController
     }
 
     /**
-     * Getting a program by id
+     * Getting a program by name
      *
-     * @Route("/categories/{categoryName}", name="show")
+     * @Route("/{categoryName}", name="show")
      * @return Response
      */
     public function show(string $categoryName):Response
@@ -55,7 +55,6 @@ class CategoryController extends AbstractController
             return $this->render('category/show.html.twig', [
                 'category' => $category,
                 'programs' => $programs,
-                'website' => 'Wild Séries'
                 ]);
         }
     }    
