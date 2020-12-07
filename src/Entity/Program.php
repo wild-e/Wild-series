@@ -40,7 +40,7 @@ class Program
      * @ORM\Column(type="text")
      * @Assert\NotBlank()
      * @Assert\Regex(
-     *     pattern="/^plus belle la vie$/",
+     *     pattern="/^plus belle la vie$/i",
      *     match=false,
      *     message="On parle de vraies séries ici")
      */
