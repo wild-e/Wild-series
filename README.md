@@ -3,10 +3,4 @@
 
 
 ## For correctors
-Video for quest 9 = Quest9.mp4
-
-Video for quest 10 = Quest10.mp4
-
-Video for quest 11 = Quest11.mp4
-
-Video for quest 12 = Quest12.mp4
+[Link to see the videos](https://drive.google.com/drive/folders/1a8jfxSTTifo9DdI7QIzpwqZnu0vMbbwR?usp=sharing)
