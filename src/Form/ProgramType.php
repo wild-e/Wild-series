@@ -10,6 +10,8 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use App\Entity\Actor;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 
 class ProgramType extends AbstractType
@@ -23,6 +25,19 @@ class ProgramType extends AbstractType
             ->add('country', TextType::class)
             ->add('year', IntegerType::class)
             ->add('category', null, ['choice_label' => 'name'])
+            ->add('actors', EntityType::class, [
+
+                'class' => Actor::class,
+                // call getSelector() in Actor
+                'choice_label' => 'selector',
+            
+                'multiple' => true,
+            
+                'expanded' => true,
+                
+                'by_reference' => false,
+                
+                ]);
         ;
     }
 
