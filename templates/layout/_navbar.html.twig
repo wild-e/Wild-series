@@ -14,9 +14,13 @@
         Les séries
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-      {% for number in 1..6 %}
-          <a class="dropdown-item" href="{{ path('program_show', {'program': number })}}">Série {{ number }}</a>
-      {% endfor %}
+          <a class="dropdown-item" href="{{ path('program_show', {'slug': 'walking-dead' })}}">Walking Dead</a>
+          <a class="dropdown-item" href="{{ path('program_show', {'slug': 'the-haunting-of-hill-house' })}}">The Haunting Of Hill House</a>
+          <a class="dropdown-item" href="{{ path('program_show', {'slug': 'american-horror-story' })}}">American Horror Story</a>
+          <a class="dropdown-item" href="{{ path('program_show', {'slug': 'love-death-and-robots' })}}">Love Death And Robots</a>
+          <a class="dropdown-item" href="{{ path('program_show', {'slug': 'penny-dreadful' })}}">Penny Dreadful</a>
+          <a class="dropdown-item" href="{{ path('program_show', {'slug': 'fear-the-walking-dead' })}}">Fear The Walking Dead</a>
+
         </div>
       </li>
       <li class="nav-item">
