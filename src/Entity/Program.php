@@ -12,11 +12,10 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=ProgramRepository::class)
- * @Assert\EnableAutoMapping()
  * @UniqueEntity(
  *     fields={"title"},
  *     errorPath="title",
- *     message="ce titre existe déjà"
+ *     message="Ce titre existe déjà"
  * )
  */
 
@@ -31,52 +30,50 @@ class Program
 
     /**
      * @ORM\Column(type="string", length=255, unique=true)
-     * @Assert\NotBlank()
-     * @Assert\Length(max="255", min="3")
+     * @Assert\NotBlank(message="Il manque le titre !")
+     * @Assert\Length(max="255")
      */
     private $title;
 
     /**
      * @ORM\Column(type="text")
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(message="Il manque le résumé !")
      * @Assert\Regex(
-     *     pattern="/^plus belle la vie$/i",
+     *     pattern="/(plus belle la vie)/",
      *     match=false,
-     *     message="On parle de vraies séries ici")
+     *     message="On parle de vraies séries ici ! ")
      */
     private $summary;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(message="Ce n'est pas une URL !")
      * @Assert\Url
-     * @Assert\Length(max="255", min="3")
      */
     private $poster;
 
     /**
      * @ORM\ManyToOne(targetEntity=Category::class)
      * @ORM\JoinColumn(nullable=false)
-     * @Assert\NotBlank()
      */
     private $category;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Assert\NotBlank()
-     * @Assert\Length(max="255", min="3")
      */
     private $country;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
-     * @Assert\NotBlank()
+     * @Assert\Regex(
+     *     pattern="/([0-9]{4})$/",
+     *     match=true,
+     *     message="On veut une vraie date ! ")
      */
     private $year;
 
     /**
      * @ORM\OneToMany(targetEntity=Season::class, mappedBy="program")
-     * @Assert\NotBlank()
      */
     private $season;
 
@@ -87,6 +84,7 @@ class Program
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Blank(message="Hein Hein hein!")
      */
     private $slug;
 
